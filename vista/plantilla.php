@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inventario</title>
 
+  <link rel="icon" href="vista/plantilla/thn.jpg">
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
@@ -16,6 +18,11 @@
 
   <!-- Theme style -->
   <link rel="stylesheet" href="vista/dist/css/adminlte.css">
+
+  <!-- DataTables -->
+  <link rel="stylesheet" href="vista/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="vista/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="vista/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
   <!-- PLUGINS DE JS -->
 
@@ -31,6 +38,20 @@
   <!-- AdminLTE for demo purposes -->
   <!-- <script src="vista/dist/js/demo.js"></script> -->
 
+  <!-- DataTables  & Plugins -->
+  <script src="vista/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="vista/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="vista/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="vista/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <script src="vista/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="vista/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+  <script src="vista/plugins/jszip/jszip.min.js"></script>
+  <script src="vista/plugins/pdfmake/pdfmake.min.js"></script>
+  <script src="vista/plugins/pdfmake/vfs_fonts.js"></script>
+  <script src="vista/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+  <script src="vista/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+  <script src="vista/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
 </head>
 <!-- CUERPO DE LA CABECERA -->
 
@@ -44,7 +65,6 @@
 
     include 'modulos/menu-lateral.php';
 
-    include 'modulos/inicio.php';
 
      /*=============================================
     CONTENIDO
