@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="vista/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="vista/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
+  
   <!-- PLUGINS DE JS -->
 
   <!-- jQuery -->
@@ -31,6 +32,10 @@
 
   <!-- Bootstrap 4 -->
   <script src="vista/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- CDN SELECT 2 -->
+  <link href="vista/plugins/select2/css/select2.css" rel="stylesheet" />
+  <script src="vista/plugins/select2/js/select2.min.js"></script>
 
   <!-- AdminLTE App -->
   <script src="vista/dist/js/adminlte.min.js"></script>
@@ -51,6 +56,8 @@
   <script src="vista/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
   <script src="vista/plugins/datatables-buttons/js/buttons.print.min.js"></script>
   <script src="vista/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+  <link rel="stylesheet" href="css/estilos.css">
 
 </head>
 <!-- CUERPO DE LA CABECERA -->
@@ -77,9 +84,10 @@
          $_GET["ruta"] == "equipos" ||
          $_GET["ruta"] == "proveedor" ||
          $_GET["ruta"] == "categorias" ||
-         $_GET["ruta"] == "planta" ||
+         $_GET["ruta"] == "plantas" ||
          $_GET["ruta"] == "sector" ||
          $_GET["ruta"] == "estacion" ||
+         $_GET["ruta"] == "lugar-trabajo" ||
          $_GET["ruta"] == "reportes" ||
          $_GET["ruta"] == "salir"){
 

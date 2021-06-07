@@ -4,7 +4,7 @@
     
     <h1>
       
-      Administrar usuarios
+      Administrar lugar de trabajo
     
     </h1>
 
@@ -12,7 +12,7 @@
       
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio /</a></li>
       
-      <li class="active" style="margin-left:7px">Administrar usuarios</li>
+      <li class="active" style="margin-left:7px">Administrar lugar de trabajo</li>
     
     </ol>
 
@@ -24,9 +24,9 @@
 
       <div class="box-header with-border mb-2">
   
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuario">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarTrabajo">
           
-          Agregar usuario
+          Agregar lugar de trabajo
 
         </button>
 
@@ -34,7 +34,7 @@
 
       <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <h3 class="card-title">Tabla de lugar de trabajo</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -42,27 +42,61 @@
                   <thead>
                   <tr>
                    <th style="width:10px">#</th>
-                   <th>Nombre</th>
-                   <th>Usuario</th>
-                   <th>Foto</th>
-                   <th>Perfil</th>
+                   <th>Planta</th>
+                   <th>Sector</th>
+                   <th>Estacion</th>
+                   <th>Equipo</th>
+                   <th>Cantidad</th>
                    <th>Estado</th>
-                   <th>Último login</th>
                    <th>Acciones</th>
                   </tr>
                   </thead>
                   <tbody>
                   <tr>
                     <td>1</td>
-                    <td>Usuario Administrador</td>
-                    <td>admin</td>
-                    <td><img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail" width="40px"></td>
-                    <td>Administrador</td>
-                    <td><button class="btn btn-success btn-xs">Activado</button></td>
-                    <td>2017-12-11 12:05:32</td>
+                    <td class="pl-0 pr-0 m-0">
+                       
+                          
+
+                           <select class="js-example-basic-single w-100 " name="state">
+                            <option value="AL">Planta 1</option>
+                              ...
+                            <option value="WY">Planta 2</option>
+                           </select>
+
+                    </td>
+                    <td>
+                       <select class="js-example-basic-single w-100 " name="state">
+                        <option value="AL">C&C Automatico</option>
+                          ...
+                        <option value="WY">QC Corte</option>
+                       </select>
+                    </td>
+                    <td>
+                           <select class="js-example-basic-single w-100 " name="state">
+                            <option value="AL">A-101</option>
+                              ...
+                            <option value="WY">A-102</option>
+                           </select>
+                    </td>
+                    <td>
+                      <select class="js-example-basic-multiple w-100" name="states[]" multiple="multiple">
+                        <option value="AL">Laptop - Acer</option>
+                          ...
+                        <option value="WY">Laptop - Hp</option>
+                      </select>
+                    </td>
+                    <td>
+                      <div class="input-group mb-3">
+                        <input type="number" class="form-control" placeholder="Cantidad" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                    </td>
+                    <td><button class="btn btn-success btn-xs">Buen estado</button></td>
                     <td>
 
                       <div class="btn-group">
+
+                        <button class="btn btn-info"><i class="fas fa-save"></i></button>
                           
                         <button class="btn btn-warning"><i class="fa fa-pencil-alt"></i></button>
 
@@ -90,7 +124,7 @@
 MODAL AGREGAR USUARIO
 ======================================-->
 
-<div id="modalAgregarUsuario" class="modal fade" role="dialog">
+<div id="modalAgregarTrabajo" class="modal fade" role="dialog">
   
   <div class="modal-dialog">
 
