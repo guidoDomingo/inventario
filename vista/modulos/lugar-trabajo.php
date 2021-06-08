@@ -23,22 +23,18 @@
     <div class="box">
 
       <div class="box-header with-border mb-2">
-  
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarTrabajo">
-          
-          Agregar lugar de trabajo
 
-        </button>
 
       </div>
 
       <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Tabla de lugar de trabajo</h3>
+                <h3 class="card-title"> Agregar lugar de trabajo
+                </h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                    <th style="width:10px">#</th>
@@ -90,6 +86,7 @@
                       <div class="input-group mb-3">
                         <input type="number" class="form-control" placeholder="Cantidad" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
+
                     </td>
                     <td><button class="btn btn-success btn-xs">Buen estado</button></td>
                     <td>
@@ -110,7 +107,128 @@
                 </table>
               </div>
               <!-- /.card-body -->
-            </div>
+      </div>
+      <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Tabla de lugar de trabajo</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                   <th style="width:10px">#</th>
+                   <th>Planta</th>
+                   <th>Sector</th>
+                   <th>Estacion</th>
+                   <th>Equipo</th>
+                   <th>Cantidad</th>
+                   <th>Estado</th>
+                   <th>Acciones</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="pl-0 pr-0 m-0">
+                      Planta 1
+                    </td>
+                    <td>
+                      Qc
+                    </td>
+                    <td>
+                      A-101
+                    </td>
+                    <td>
+                      Laptop - Hp
+                    </td>
+                    <td>
+                      30
+                    </td>
+                    <td><button class="btn btn-success btn-xs">Buen estado</button></td>
+                    <td>
+
+                      <div class="btn-group">
+
+                        <button class="btn btn-info"><i class="fas fa-save"></i></button>
+                          
+                        <button class="btn btn-warning"><i class="fa fa-pencil-alt"></i></button>
+
+                        <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+
+                      </div>  
+
+                    </td>
+                  </tr>
+                   <tr>
+                    <td>1</td>
+                    <td class="pl-0 pr-0 m-0">
+                      Planta 1
+                    </td>
+                    <td>
+                      Qc
+                    </td>
+                    <td>
+                      A-101
+                    </td>
+                    <td>
+                      Laptop - Acer
+                    </td>
+                    <td>
+                      15
+                    </td>
+                    <td><button class="btn btn-success btn-xs">Buen estado</button></td>
+                    <td>
+
+                      <div class="btn-group">
+
+                        <button class="btn btn-info"><i class="fas fa-save"></i></button>
+                          
+                        <button class="btn btn-warning"><i class="fa fa-pencil-alt"></i></button>
+
+                        <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+
+                      </div>  
+
+                    </td>
+                  </tr>
+                   <tr>
+                    <td>1</td>
+                    <td class="pl-0 pr-0 m-0">
+                      Planta 1
+                    </td>
+                    <td>
+                      Automatico
+                    </td>
+                    <td>
+                      A-101
+                    </td>
+                    <td>
+                      Laptop - toshiba
+                    </td>
+                    <td>
+                      30
+                    </td>
+                    <td><button class="btn btn-success btn-xs">Buen estado</button></td>
+                    <td>
+
+                      <div class="btn-group">
+
+                        <button class="btn btn-info"><i class="fas fa-save"></i></button>
+                          
+                        <button class="btn btn-warning"><i class="fa fa-pencil-alt"></i></button>
+
+                        <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+
+                      </div>  
+
+                    </td>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+      </div>
             <!-- /.card -->
       
 
