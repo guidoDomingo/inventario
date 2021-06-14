@@ -11,19 +11,22 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
-  <!-- PLUGIN DE CSS -->
+     <!--=====================================
+  PLUGINS DE CSS
+  ======================================-->
+
+ 
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="vista/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="vista/plugins/fontawesome-free/css/fontawesome.min.css">
 
   <!-- Theme style -->
-  <link rel="stylesheet" href="vista/dist/css/adminlte.css">
+  <link rel="stylesheet" href="vista/dist/css/adminlte.min.css">
 
-  <!-- DataTables -->
-  <link rel="stylesheet" href="vista/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="vista/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="vista/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
+  <link rel="stylesheet" href="vista/css/estilos.css">
   
   <!-- PLUGINS DE JS -->
 
@@ -57,7 +60,10 @@
   <script src="vista/plugins/datatables-buttons/js/buttons.print.min.js"></script>
   <script src="vista/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
-  <link rel="stylesheet" href="css/estilos.css">
+  <!-- SweetAlert 2 -->
+  <script src="vista/plugins/sweetalert.min.js"></script>
+
+
 
 </head>
 <!-- CUERPO DE LA CABECERA -->
@@ -122,5 +128,6 @@
 <!-- ./wrapper -->
 
 <script src="vista/js/plantilla.js"></script>
+<script src="vista/js/usuarios.js"></script>
 </body>
 </html>
