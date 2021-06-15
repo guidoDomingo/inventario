@@ -66,7 +66,7 @@
                 </table>
               </div>
               <!-- /.card-body -->
-            </div>
+      </div>
             <!-- /.card -->
       
 

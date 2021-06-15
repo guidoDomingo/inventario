@@ -447,19 +447,20 @@ class ControladorUsuarios{
 
 				echo'<script>
 
-				swal({
-					  type: "success",
-					  title: "El usuario ha sido borrado correctamente",
-					  showConfirmButton: true,
-					  confirmButtonText: "Cerrar",
-					  closeOnConfirm: false
-					  }).then(function(result) {
-								if (result.value) {
-
-								window.location = "usuarios";
-
-								}
-							})
+						swal({
+						  title: "Usuario borrado correctamente",
+						  text: "Registro borrado de la App",
+						  icon: "success",
+						  buttons: true,
+						  dangerMode: true,
+						})
+						.then((willDelete) => {
+						  if (willDelete) {
+						    window.location = "usuarios";
+						  } else {
+						    window.location = "usuarios";
+						  }
+						});
 
 				</script>';
 

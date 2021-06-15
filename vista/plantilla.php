@@ -18,7 +18,7 @@
  
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="vista/plugins/fontawesome-free/css/fontawesome.min.css">
+  <link rel="stylesheet" href="vista/plugins/fontawesome-free/css/all.min.css">
 
   <!-- Theme style -->
   <link rel="stylesheet" href="vista/dist/css/adminlte.min.css">
@@ -27,6 +27,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
   <link rel="stylesheet" href="vista/css/estilos.css">
+
+    <!-- DataTables -->
+  <link rel="stylesheet" href="vista/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="vista/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="vista/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   
   <!-- PLUGINS DE JS -->
 

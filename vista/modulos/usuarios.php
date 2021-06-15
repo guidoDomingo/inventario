@@ -1,7 +1,7 @@
 
 <div class="content-wrapper">
 
-  <section class="content-header">
+   <section class="content-header d-flex justify-content-between">
     
     <h1>
       
@@ -9,11 +9,11 @@
     
     </h1>
 
-    <ol class="breadcrumb">
+    <ol class="breadcrumb ">
       
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio /</a></li>
       
-      <li class="active">Administrar usuarios</li>
+      <li class="active" style="margin-left:7px">Administrar usuarios</li>
     
     </ol>
 
@@ -23,7 +23,7 @@
 
     <div class="box">
 
-      <div class="box-header with-border">
+      <div class="box-header with-border mb-2">
   
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuario">
           
@@ -33,88 +33,94 @@
 
       </div>
 
-      <div class="box-body">
-        
-       <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
+      <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Tabla de Usuarios</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped tablas">
+                  
+                  <thead>
          
-        <thead>
-         
-         <tr>
-           
-           <th style="width:10px">#</th>
-           <th>Nombre</th>
-           <th>Usuario</th>
-           <th>Foto</th>
-           <th>Perfil</th>
-           <th>Estado</th>
-           <th>Último login</th>
-           <th>Acciones</th>
+                     <tr>
+                       
+                       <th style="width:10px">#</th>
+                       <th>Nombre</th>
+                       <th>Usuario</th>
+                       <th>Foto</th>
+                       <th>Perfil</th>
+                       <th>Estado</th>
+                       <th>Último login</th>
+                       <th>Acciones</th>
 
-         </tr> 
+                     </tr> 
 
-        </thead>
+                    </thead>
 
-        <tbody>
+                    <tbody>
 
-        <?php
+                          <?php
 
-        $item = null;
-        $valor = null;
+                          $item = null;
+                          $valor = null;
 
-       $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
+                         $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
 
-       foreach ($usuarios as $key => $value){
-         
-          echo ' <tr>
-                  <td>'.($key+1).'</td>
-                  <td>'.$value["nombre"].'</td>
-                  <td>'.$value["usuario"].'</td>';
+                         foreach ($usuarios as $key => $value){
+                           
+                            echo ' <tr>
+                                    <td>'.($key+1).'</td>
+                                    <td>'.$value["nombre"].'</td>
+                                    <td>'.$value["usuario"].'</td>';
 
-                  if($value["foto"] != ""){
+                                    if($value["foto"] != ""){
 
-                    echo '<td><img src="'.$value["foto"].'" class="img-thumbnail" width="40px"></td>';
+                                      echo '<td><img src="'.$value["foto"].'" class="img-thumbnail" width="40px"></td>';
 
-                  }else{
+                                    }else{
 
-                    echo '<td><img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail" width="40px"></td>';
+                                      echo '<td><img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail" width="40px"></td>';
 
-                  }
+                                    }
 
-                  echo '<td>'.$value["perfil"].'</td>';
+                                    echo '<td>'.$value["perfil"].'</td>';
 
-                  if($value["estado"] != 0){
+                                    if($value["estado"] != 0){
 
-                    echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="0">Activado</button></td>';
+                                      echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="0">Activado</button></td>';
 
-                  }else{
+                                    }else{
 
-                    echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="1">Desactivado</button></td>';
+                                      echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="1">Desactivado</button></td>';
 
-                  }             
+                                    }             
 
-                  echo '<td>'.$value["ultimo_login"].'</td>
-                  <td>
+                                    echo '<td>'.$value["ultimo_login"].'</td>
+                                    <td>
 
-                    <div class="btn-group">
-                        
-                      <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
+                                      <div class="btn-group">
+                                          
+                                        <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil-alt"></i></button>
 
-                      <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["id"].'" fotoUsuario="'.$value["foto"].'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
+                                        <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["id"].'" fotoUsuario="'.$value["foto"].'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
 
-                    </div>  
+                                      </div>  
 
-                  </td>
+                                    </td>
 
-                </tr>';
-        }
+                                  </tr>';
+                          }
 
 
-        ?> 
+                          ?> 
 
-        </tbody>
+                    </tfoot>
 
-       </table>
+                </table>
 
+              </div>
+              <!-- /.card-body -->
       </div>
 
     </div>
@@ -139,11 +145,13 @@ MODAL AGREGAR USUARIO
         CABEZA DEL MODAL
         ======================================-->
 
-        <div class="modal-header" style="background:#3c8dbc; color:white">
-
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-          <h4 class="modal-title">Agregar usuario</h4>
+         <div class="modal-header d-flex justify-content-between" style="background:#3c8dbc; color:white">
+          <div>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div>
+            <h4 class="modal-title">Agregar usuarios</h4>
+          </div>
 
         </div>
 
@@ -161,7 +169,9 @@ MODAL AGREGAR USUARIO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+                <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa fa-user"></i>
+                </button> 
 
                 <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar nombre" required>
 
@@ -175,7 +185,9 @@ MODAL AGREGAR USUARIO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+                <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa fa-key"></i>
+                </button>  
 
                 <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Ingresar usuario" id="nuevoUsuario" required>
 
@@ -189,7 +201,9 @@ MODAL AGREGAR USUARIO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-lock"></i></span> 
+                <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa fa-lock"></i>
+                </button> 
 
                 <input type="password" class="form-control input-lg" name="nuevoPassword" placeholder="Ingresar contraseña" required>
 
@@ -203,7 +217,9 @@ MODAL AGREGAR USUARIO
               
               <div class="input-group">
               
-                <span class="input-group-addon"><i class="fa fa-users"></i></span> 
+                <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa fa-users"></i>
+                </button> 
 
                 <select class="form-control input-lg" name="nuevoPerfil">
                   
