@@ -58,7 +58,7 @@ $(".tablas").on("click", ".btnEditarUsuario", function(){
 
   var datos = new FormData();
   datos.append("idUsuario", idUsuario);
-
+  console.log(datos);
   $.ajax({
 
     url:"ajax/usuarios.ajax.php",

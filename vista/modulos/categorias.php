@@ -38,7 +38,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example1" class="table table-bordered table-striped tablas">
                   <thead>
                   <tr>
                    <th style="width:10px">#</th>
@@ -47,21 +47,33 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Usuario Administrador</td>
-                    <td>
+                  <?php
+                  $item = null;
+                  $valor = null;
+                  $respuesta = ControladorCategoria::ctrMostrarCategoria($item,$valor); 
 
-                      <div class="btn-group">
-                          
-                        <button class="btn btn-warning"><i class="fa fa-pencil-alt"></i></button>
+                  foreach ($respuesta as $key => $value) {
+                     echo '
+                            <tr>
+                              <td>'.($key+1).'</td>
+                              <td>'.$value['nombre_categoria'].'</td>
+                              <td>
 
-                        <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                                <div class="btn-group">
+                                    
+                                  <button class="btn btn-warning editarCategoria" idCategoria='.$value['id'].' data-toggle="modal" data-target="#modalEditarCategoria"><i class="fa fa-pencil-alt"></i></button>
 
-                      </div>  
+                                  <button class="btn btn-danger eliminarCategoria" idCategoria='.$value['id'].' ><i class="fa fa-times"></i></button>
 
-                    </td>
-                  </tr>
+                                </div>  
+
+                              </td>
+                            </tr>
+                          ';
+                   } 
+
+                  ?>  
+                  
                   </tfoot>
                 </table>
               </div>
@@ -120,7 +132,7 @@ MODAL AGREGAR Categoria
                     <i class="fa fa-th"></i>
                   </button>
                 </div>
-                <input type="text" class="form-control" placeholder="Categoria" aria-label="Categoria" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Categoria" name="nuevo_categoria" aria-label="Categoria" aria-describedby="basic-addon1">
               </div>
 
             </div>
@@ -144,11 +156,110 @@ MODAL AGREGAR Categoria
 
       </form>
 
+      <?php
+
+      $crearCategoria = new ControladorCategoria();
+      $crearCategoria -> ctrGuardarCategoria();
+
+
+      ?>
+
     </div>
 
   </div>
 
 </div>
+
+<!--=====================================
+MODAL EDITAR Categoria
+======================================-->
+
+<div id="modalEditarCategoria" class="modal fade" role="dialog">
+  
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <form role="form" method="post" enctype="multipart/form-data">
+
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
+
+        <div class="modal-header d-flex justify-content-between" style="background:#3c8dbc; color:white">
+          <div>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div>
+            <h4 class="modal-title">Editar categoría</h4>
+          </div>
+
+        </div>
+
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
+
+        <div class="modal-body">
+
+          <div class="box-body">
+
+            <!-- ENTRADA PARA EL NOMBRE -->
+            
+            <div class="form-group">
+              
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa fa-th"></i>
+                  </button>
+                </div>
+                <input type="text" class="form-control" id="edit_categoria" placeholder="Categoria" name="editar_categoria" required>
+                <input type="hidden" name="idCategoria" id="idCategoria" required>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+          <button type="submit" class="btn btn-primary">Editar Categoría</button>
+
+        </div>
+
+      </form>
+
+      <?php
+
+      $editarCategoria = new ControladorCategoria();
+      $editarCategoria -> ctrEditarCategoria();
+
+
+      ?>
+
+    </div>
+
+  </div>
+
+</div>
+
+      <?php
+
+      $eliminarCategoria = new ControladorCategoria();
+      $eliminarCategoria -> ctrBorrarCategoria();
+
+
+      ?>
 
 
 
