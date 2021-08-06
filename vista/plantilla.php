@@ -135,6 +135,9 @@
 <script src="vista/js/plantilla.js"></script>
 <script src="vista/js/usuarios.js"></script>
 <script src="vista/js/categoria.js"></script>
+<script src="vista/js/proveedor.js"></script>
+<script src="vista/js/equipo.js"></script>
+<script src="vista/js/planta.js"></script>
 </body>
 </body>
 </html>

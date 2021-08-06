@@ -26,7 +26,7 @@
   
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarProveedor">
           
-          Agregar proveedor
+          Agregar Proveedor
 
         </button>
 
@@ -38,13 +38,13 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example1" class="table table-bordered table-striped tablas">
                   <thead>
                   <tr>
                    <th style="width:10px">#</th>
                    <th>Nombre</th>
-                   <th>Telefono</th>
-                   <th>Pais</th>
+                   <th>Teléfono</th>
+                   <th>País</th>
                    <th>Ruc</th>
                    <th>Correo</th>
                    <th>Dirección</th>
@@ -52,31 +52,43 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Usuario Administrador</td>
-                    <td>Telefono</td>
-                    <td>Pais</td>
-                    <td>Ruc</td>
-                    <td>Correo</td>
-                    <td>Dirección</td>
-                    <td>
+                  <?php
+                  $item = null;
+                  $valor = null;
+                  $respuesta = ControladorProveedor::ctrMostrarProveedor($item,$valor); 
 
-                      <div class="btn-group">
-                          
-                        <button class="btn btn-warning"><i class="fa fa-pencil-alt"></i></button>
+                  foreach ($respuesta as $key => $value) {
+                     echo '
+                            <tr>
+                              <td>'.($key+1).'</td>
+                              <td>'.$value['nombre'].'</td>
+                              <td>'.$value['telefono'].'</td>
+                              <td>'.$value['pais'].'</td>
+                              <td>'.$value['ruc'].'</td>
+                              <td>'.$value['correo'].'</td>
+                              <td>'.$value['direccion'].'</td>
+                              <td>
 
-                        <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                                <div class="btn-group">
+                                    
+                                  <button class="btn btn-warning editarProveedor" idProveedor='.$value['id'].' data-toggle="modal" data-target="#modalEditarProveedor"><i class="fa fa-pencil-alt"></i></button>
 
-                      </div>  
+                                  <button class="btn btn-danger eliminarProveedor" idProveedor='.$value['id'].' ><i class="fa fa-times"></i></button>
 
-                    </td>
-                  </tr>
+                                </div>  
+
+                              </td>
+                            </tr>
+                          ';
+                   } 
+
+                  ?>  
+                  
                   </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->
-            </div>
+      </div>
             <!-- /.card -->
       
 
@@ -87,7 +99,7 @@
 </div>
 
 <!--=====================================
-MODAL AGREGAR USUARIO
+MODAL AGREGAR PROVEEDOR
 ======================================-->
 
 <div id="modalAgregarProveedor" class="modal fade" role="dialog">
@@ -127,93 +139,91 @@ MODAL AGREGAR USUARIO
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <button class="btn btn-outline-secondary" type="button">
-                    <i class="fa fa-user"></i>
+                    <i class="fa fa-th"></i>
                   </button>
                 </div>
-                <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Nombre proveedor" name="nuevo_proveedor">
               </div>
 
             </div>
-
-               <!-- ENTRADA PARA EL TELEFONO -->
+            <!-- ENTRADA PARA EL telefono -->
             
             <div class="form-group">
               
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <button class="btn btn-outline-secondary" type="button">
-                    <i class="fas fa-phone-volume"></i>
+                    <i class="fa fa-th"></i>
                   </button>
                 </div>
-                <input type="text" class="form-control" placeholder="Telefono" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Telefono" name="nuevo_telefono">
               </div>
 
             </div>
-
-               <!-- ENTRADA PARA EL PAIS -->
+            <!-- ENTRADA PARA PAIS -->
             
             <div class="form-group">
               
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <button class="btn btn-outline-secondary" type="button">
-                    <i class="fas fa-globe-asia"></i>
+                    <i class="fa fa-th"></i>
                   </button>
                 </div>
-                <input type="text" class="form-control" placeholder="Pais" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Pais" name="nuevo_pais">
               </div>
 
             </div>
 
-               <!-- ENTRADA PARA EL RUC -->
+            <!-- ENTRADA PARA EL RUC -->
             
             <div class="form-group">
               
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <button class="btn btn-outline-secondary" type="button">
-                    <i class="fas fa-truck"></i>
+                    <i class="fa fa-th"></i>
                   </button>
                 </div>
-                <input type="text" class="form-control" placeholder="Ruc" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Ruc" name="nuevo_ruc">
               </div>
 
             </div>
 
-               <!-- ENTRADA PARA EL CORREO -->
+            <!-- ENTRADA PARA EL CORREO -->
             
             <div class="form-group">
               
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <button class="btn btn-outline-secondary" type="button">
-                    <i class="fas fa-mail-bulk"></i>
+                    <i class="fa fa-th"></i>
                   </button>
                 </div>
-                <input type="text" class="form-control" placeholder="Correo" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Correo" name="nuevo_correo">
               </div>
 
             </div>
 
-               <!-- ENTRADA PARA EL DIRECCIÓN -->
+            <!-- ENTRADA PARA EL DIRECCION -->
             
             <div class="form-group">
               
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <button class="btn btn-outline-secondary" type="button">
-                    <i class="fas fa-route"></i>
+                    <i class="fa fa-th"></i>
                   </button>
                 </div>
-                <input type="text" class="form-control" placeholder="Dirección" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Direccion" name="nuevo_direccion">
               </div>
 
             </div>
-            
 
           </div>
 
         </div>
+
 
         <!--=====================================
         PIE DEL MODAL
@@ -223,17 +233,189 @@ MODAL AGREGAR USUARIO
 
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-          <button type="submit" class="btn btn-primary">Guardar proveedor</button>
+          <button type="submit" class="btn btn-primary">Guardar Proveedor</button>
 
         </div>
 
       </form>
+
+      <?php
+
+      $crearProveedor = new ControladorProveedor();
+      $crearProveedor -> ctrGuardarProveedor();
+
+
+      ?>
 
     </div>
 
   </div>
 
 </div>
+
+<!--=====================================
+MODAL EDITAR PROVEEDOR
+======================================-->
+
+<div id="modalEditarProveedor" class="modal fade" role="dialog">
+  
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <form role="form" method="post" enctype="multipart/form-data">
+
+        <!--=====================================
+        CABEZA DEL MODAL
+        ======================================-->
+
+        <div class="modal-header d-flex justify-content-between" style="background:#3c8dbc; color:white">
+          <div>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div>
+            <h4 class="modal-title">Editar proveedor</h4>
+          </div>
+
+        </div>
+
+        <!--=====================================
+        CUERPO DEL MODAL
+        ======================================-->
+
+        <div class="modal-body">
+
+          <div class="box-body">
+
+            <!-- ENTRADA PARA EL NOMBRE -->
+            
+            <div class="form-group">
+              
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa fa-th"></i>
+                  </button>
+                </div>
+                <input type="text" class="form-control" placeholder="Nombre proveedor" id="editar_proveedor" name="editar_proveedor">
+                <input type="hidden" name="idProveedor" id="idProveedor">
+              </div>
+
+            </div>
+            <!-- ENTRADA PARA EL telefono -->
+            
+            <div class="form-group">
+              
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa fa-th"></i>
+                  </button>
+                </div>
+                <input type="text" class="form-control" placeholder="Telefono" id="editar_telefono" name="editar_telefono">
+              </div>
+
+            </div>
+            <!-- ENTRADA PARA PAIS -->
+            
+            <div class="form-group">
+              
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa fa-th"></i>
+                  </button>
+                </div>
+                <input type="text" class="form-control" placeholder="Pais" id="editar_pais" name="editar_pais">
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL RUC -->
+            
+            <div class="form-group">
+              
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa fa-th"></i>
+                  </button>
+                </div>
+                <input type="text" class="form-control" placeholder="Ruc" id="editar_ruc" name="editar_ruc">
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL CORREO -->
+            
+            <div class="form-group">
+              
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa fa-th"></i>
+                  </button>
+                </div>
+                <input type="text" class="form-control" placeholder="Correo" id="editar_correo" name="editar_correo">
+              </div>
+
+            </div>
+
+            <!-- ENTRADA PARA EL DIRECCION -->
+            
+            <div class="form-group">
+              
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa fa-th"></i>
+                  </button>
+                </div>
+                <input type="text" class="form-control" placeholder="Direccion" id="editar_direccion" name="editar_direccion">
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+          <button type="submit" class="btn btn-primary">Editar Proveedor</button>
+
+        </div>
+
+      </form>
+
+      <?php
+
+      $editarProveedor = new ControladorProveedor();
+      $editarProveedor -> ctrEditarProveedor();
+
+
+      ?>
+
+    </div>
+
+  </div>
+
+</div>
+
+      <?php
+
+      $eliminarProveedor = new ControladorProveedor();
+      $eliminarProveedor -> ctrBorrarProveedor();
+
+
+      ?>
 
 
 
