@@ -4,7 +4,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Inventario</title>
+  <title>Administrar Punteros</title>
 
   <link rel="icon" href="vista/plantilla/thn.jpg">
 
@@ -68,6 +68,7 @@
   <!-- SweetAlert 2 -->
   <script src="vista/plugins/sweetalert.min.js"></script>
 
+  <script src="vista/plugins/chart.js/Chart.js"></script>
 
 
 </head>
@@ -92,13 +93,8 @@
 
       if($_GET["ruta"] == "inicio" ||
          $_GET["ruta"] == "usuarios" ||
-         $_GET["ruta"] == "equipos" ||
-         $_GET["ruta"] == "proveedor" ||
-         $_GET["ruta"] == "categorias" ||
-         $_GET["ruta"] == "plantas" ||
-         $_GET["ruta"] == "sector" ||
-         $_GET["ruta"] == "estacion" ||
-         $_GET["ruta"] == "lugar-trabajo" ||
+         $_GET["ruta"] == "puntero" ||
+         $_GET["ruta"] == "lider" ||
          $_GET["ruta"] == "reportes" ||
          $_GET["ruta"] == "salir"){
 
@@ -133,11 +129,13 @@
 <!-- ./wrapper -->
 
 <script src="vista/js/plantilla.js"></script>
-<script src="vista/js/usuarios.js"></script>
+<!-- <script src="vista/js/usuarios.js"></script>
 <script src="vista/js/categoria.js"></script>
 <script src="vista/js/proveedor.js"></script>
 <script src="vista/js/equipo.js"></script>
-<script src="vista/js/planta.js"></script>
+<script src="vista/js/planta.js"></script>-->
+<script src="vista/js/lider.js"></script> 
+<script src="vista/js/puntero.js"></script>
 </body>
 </body>
 </html>

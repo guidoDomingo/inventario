@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="inicio" class="brand-link">
       <img src="vista/img/plantilla/thn.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Thn Paraguay</span>
+      <span class="brand-text font-weight-light">Lista de Punteros</span>
     </a>
 
     <!-- Sidebar -->
@@ -13,7 +13,7 @@
           <img src="vista/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Guido Ruiz</a>
+          <a href="#" class="d-block">Juan Carlos</a>
         </div>
       </div>
 
@@ -26,111 +26,30 @@
                with font-awesome or any other icon font library -->
           
           <li class="nav-item">
-            <a href="inicio" class="nav-link">
+            <a href="puntero" class="nav-link">
               <i class="nav-icon fa fa-home"></i>
               <p>
-                Inicio
+                Votantes
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="usuarios" class="nav-link">
+            <a href="lider" class="nav-link">
               <i class="nav-icon fa fa-user"></i>
               <p>
-                Usuarios
+                Puntero
               </p>
             </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                Equipos
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="categorias" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Categoria</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="proveedor" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Proveedor</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="equipos" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Equipo</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                Planta Industrial
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-             <li class="nav-item">
-                <a href="plantas" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Planta</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="sector" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Sector</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="estacion" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Estación</p>
-                </a>
-              </li>
-            </ul>
           </li>
            <li class="nav-item">
-            <a href="lugar-trabajo" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                Lugar de trabajo
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+            <a href="reportes" class="nav-link">
+             <i class="nav-icon fa fa-flag"></i>
               <p>
                 Reportes
-                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="mensual" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Mensual</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="semanal" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Semanal</p>
-                </a>
-              </li>
-            </ul>
           </li>
+          
           
         </ul>
       </nav>
