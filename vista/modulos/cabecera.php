@@ -25,7 +25,7 @@
         
                             <?php
         
-                                echo '<img src="vista/img/plantilla/thn.jpg" class="user-image">';
+                                echo '<img src="vista/img/elecciones/elecciones.jfif" class="user-image">';
         
         
                             ?>

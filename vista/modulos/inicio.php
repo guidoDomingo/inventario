@@ -22,8 +22,24 @@
             <!-- Default box -->
         <div class="card card-solid">
             
-            <div class="card-body pb-0">
-                
+            <div class="card-body pb-0 ">
+
+              <div class="row">
+
+                  <div class="col d-flex">
+                     <?php
+
+                      
+
+                          include "cajas-superiores.php";
+
+                      
+
+                      ?>
+                  </div>
+
+              </div>
+                  
             </div>
             <!-- /.card-body -->
 

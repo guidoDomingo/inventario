@@ -14,7 +14,7 @@ $(".tablas").on("click", ".btnEditarPuntero", function(){
 	    processData: false,
 	    dataType: "json",
 	    success: function(respuesta){
-	    	console.log("respuesta", respuesta);
+	    	//console.log("respuesta", respuesta);
 
 	    	var datos = new FormData();
 			datos.append("idLider", respuesta["id_lider"]);
@@ -28,7 +28,7 @@ $(".tablas").on("click", ".btnEditarPuntero", function(){
 				    processData: false,
 				    dataType: "json",
 				    success: function(respuesta_lider){
-				    	console.log("respuesta", respuesta_lider);
+				    	//console.log("respuesta", respuesta_lider);
 				    	
 			     		$("#nuevoLider").val(respuesta_lider["id_lider"]);
 			     		
@@ -195,3 +195,8 @@ $(".tablas").on("click", ".btnActivar", function(){
     }
 
 })
+
+// In your Javascript (external .js resource or <script> tag)
+$(document).ready(function() {
+    $('.select2').select2();
+});

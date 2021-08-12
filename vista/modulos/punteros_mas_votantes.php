@@ -49,7 +49,7 @@ PRODUCTOS MÁS VENDIDOS
 
     </div>
 
-    <div class="box-footer no-padding">
+    <div class="box-footer no-padding punteroVotante p-3">
     	
 		<ul class="">
 			
@@ -59,24 +59,57 @@ PRODUCTOS MÁS VENDIDOS
             $votos = 0;
             
           	foreach ($productos as $key => $value) {
-
+              //var_dump($key);
               
               $votos = ControladorPuntero::ctrMostrarCantidadVotante($value["id_lider"]);
                        
                  $ya_voto = ModeloPuntero::mdlCantidadVotoPorPuntero("puntero",$value["id_lider"]);
-              
 
-          		echo '
+              	if($votos[0] == $ya_voto["total"]){
 
-
-              <li>
+                  	echo '
+          				<li>
 						 
     						 <p>'.$value["nombre"].'<span class="pull-right text-'.$colores[$key].'">   
-    						 '.ceil(intval($votos[0])*100/intval($total["total"])).'% ,Votantes: <strong>'.$votos[0].'</strong>, de estos ya votaron: '. $ya_voto["total"].' </span>
-    			       </p>
+    						 '.ceil(intval($votos[0])*100/intval($total["total"])).'% ,Votantes: <strong>'.$votos[0].'</strong>, <span class="bg-green text-white votoPuntero p-2">de estos ya votaron: '. $ya_voto["total"].'</span></span>
+    			       		 </p>
                  
 
-      				</li> ';
+      					</li> 
+      					
+      					';
+
+                }elseif($ya_voto["total"] <= $votos[0] and $ya_voto["total"] > 0 ){
+
+                 	echo '
+          				<li>
+						 
+    						 <p>'.$value["nombre"].'<span class="pull-right text-'.$colores[$key].'">   
+    						 '.ceil(intval($votos[0])*100/intval($total["total"])).'% ,Votantes: <strong>'.$votos[0].'</strong>, <span class="bg-yellow text-white votoPuntero p-2"> de estos ya votaron: '. $ya_voto["total"].'<span> </span>
+    			       		 </p>
+                 
+
+      					</li> 
+      					
+      					';
+
+                }elseif($ya_voto["total"] == 0 ){
+
+                 	echo '
+          				<li>
+						 
+    						 <p>'.$value["nombre"].'<span class="pull-right text-'.$colores[$key].'">   
+    						 '.ceil(intval($votos[0])*100/intval($total["total"])).'% ,Votantes: <strong>'.$votos[0].'</strong>,<span class="bg-red text-white votoPuntero p-2"> de estos ya votaron: '. $ya_voto["total"].'<span> </span>
+    			       		 </p>
+                 
+
+      					</li> 
+      					
+      					';
+
+                }
+
+          	
 
             
 
@@ -101,7 +134,7 @@ PRODUCTOS MÁS VENDIDOS
   var pieChartCanvas = $('#pieChart').get(0).getContext('2d');
 
   var pieChart       = new Chart(pieChartCanvas);
-  console.log(pieChart);
+  //console.log(pieChart);
   var PieData        = [
 
   <?php

@@ -3,9 +3,8 @@
 class ControladorPuntero{
 
 	/*=============================================
-	INGRESO DEl puntero
+	crear puntero
 	=============================================*/
-
 
 	static public function ctrCrearPuntero(){
 
@@ -83,16 +82,16 @@ class ControladorPuntero{
 			}
 
 
-		}
+		    }
 
 
 	}
 
 
-}	
+    }	
 
 	/*=============================================
-	MOSTRAR USUARIO
+	MOSTRAR PUNTERO
 	=============================================*/
 
 	static public function ctrMostrarPuntero($item, $valor){
@@ -105,7 +104,7 @@ class ControladorPuntero{
 	}
 
 	/*=============================================
-	MOSTRAR USUARIO
+	MOSTRAR PUNTERO LIDERES
 	=============================================*/
 
 	static public function ctrMostrarPunterosLideres($item, $valor){
@@ -117,8 +116,8 @@ class ControladorPuntero{
 		return $respuesta;
 	}
 
-		/*=============================================
-	MOSTRAR Puntero Unico
+	/*=============================================
+	MOSTRAR PUNTERO UNICO
 	=============================================*/
 
 	static public function ctrMostrarPunterosUnicos($item, $valor){
@@ -130,7 +129,7 @@ class ControladorPuntero{
 		return $respuesta;
 	}
 
-		/*=============================================
+	/*=============================================
 	MOSTRAR Votante total
 	=============================================*/
 
@@ -143,7 +142,7 @@ class ControladorPuntero{
 		return $respuesta;
 	}
 
-		/*=============================================
+	/*=============================================
 	MOSTRAR Posible Votante total
 	=============================================*/
 
@@ -156,20 +155,7 @@ class ControladorPuntero{
 		return $respuesta;
 	}
 
-	// 	/*=============================================
-	// MOSTRAR cantidad votante
-	// =============================================*/
-
-	// static public function ctrVotanteTotal(){
-
-	// 	$tabla = "puntero";
-
-	// 	$respuesta = ModeloPuntero::mdlSumaTotalVotante($tabla);
-
-	// 	return $respuesta;
-	// }
-
-		/*=============================================
+	/*=============================================
 	MOSTRAR nombre de los votantes
 	=============================================*/
 
@@ -184,7 +170,7 @@ class ControladorPuntero{
 
 
 	/*=============================================
-	EDITAR USUARIO
+	EDITAR puntero
 	=============================================*/
 
 	static public function ctrEditarPuntero(){
@@ -269,10 +255,10 @@ class ControladorPuntero{
 
 	}
 
-}
+    }
 
 	/*=============================================
-	BORRAR USUARIO
+	BORRAR PUNTERO
 	=============================================*/
 
 	static public function ctrBorrarPuntero(){
@@ -312,23 +298,45 @@ class ControladorPuntero{
 
 	}
 
+	/*=============================================
+	 SUNA PUNTERO
+	=============================================*/
+
 	static public function ctrMostrarSumaPuntero(){
 
-	$tabla = "puntero";
+		$tabla = "puntero";
 
-	$respuesta = ModeloPuntero::mdlSumaTotalPuntero($tabla);
+		$respuesta = ModeloPuntero::mdlSumaTotalPuntero($tabla);
 
-	return $respuesta;
+		return $respuesta;
 
 	}
 
+		/*=============================================
+	 SUNA LIDER
+	=============================================*/
+
+	static public function ctrCantidadTotalLider(){
+
+		$tabla = "lider";
+
+		$respuesta = ModeloPuntero::mdlCantidadTotalLider($tabla);
+
+		return $respuesta;
+
+	}
+
+	/*=============================================
+	Mostrar cantidad de votantes
+	=============================================*/
+
 	static public function ctrMostrarCantidadVotante($id){
 
-	$tabla = "puntero";
+		$tabla = "puntero";
 
-	$respuesta = ModeloPuntero::mdlCantidadVotante($tabla,$id);
+		$respuesta = ModeloPuntero::mdlCantidadVotante($tabla,$id);
 
-	return $respuesta;
+		return $respuesta;
 
 	}
 

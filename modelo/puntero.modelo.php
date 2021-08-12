@@ -5,7 +5,7 @@ require_once "conexion.php";
 class ModeloPuntero{
 
 	/*=============================================
-	MOSTRAR USUARIOS
+	MOSTRAR PUNTEROS
 	=============================================*/
 
 	static public function mdlMostrarPunteros($tabla, $item, $valor){
@@ -43,6 +43,10 @@ class ModeloPuntero{
 		$stmt = null;
 
 	}
+
+    /*=============================================
+	MOSTRAR PUNTEROS LIDERES
+	=============================================*/
 
 	static public function mdlMostrarPunterosLideres($tabla, $item, $valor){
 
@@ -130,7 +134,7 @@ class ModeloPuntero{
 
 
 	/*=============================================
-	REGISTRO DE PUNTERO
+	CREAR PUNTERO
 	=============================================*/
 
 	static public function mdlIngresarPuntero($tabla, $datos){
@@ -181,7 +185,7 @@ class ModeloPuntero{
 	}
 
 	/*=============================================
-	EDITAR USUARIO
+	EDITAR PUNTERO
 	=============================================*/
 
 	static public function mdlEditarPuntero($tabla, $datos){
@@ -226,7 +230,7 @@ class ModeloPuntero{
 	}
 
 	/*=============================================
-	ACTUALIZAR USUARIO
+	ACTUALIZAR VOTANTE
 	=============================================*/
 
 	static public function mdlActualizarVotante($tabla, $item1, $valor1, $item2, $valor2){
@@ -253,7 +257,7 @@ class ModeloPuntero{
 	}
 
 	/*=============================================
-	BORRAR USUARIO
+	BORRAR puntero
 	=============================================*/
 
 	static public function mdlBorrarPuntero($tabla, $datos){
@@ -281,7 +285,7 @@ class ModeloPuntero{
 
 
 	/*=============================================
-	SUMAR EL TOTAL DE VENTAS
+	SUMAR EL TOTAL DE PUNTEROS
 	=============================================*/
 
 	static public function mdlSumaTotalPuntero($tabla){	
@@ -299,6 +303,24 @@ class ModeloPuntero{
 	}
 
 		/*=============================================
+	SUMAR EL TOTAL DE LIDERES
+	=============================================*/
+
+	static public function mdlCantidadTotalLider($tabla){	
+
+		$stmt = Conexion::conectar()->prepare("SELECT COUNT(id_lider) as total FROM $tabla");
+
+		$stmt -> execute();
+
+		return $stmt -> fetch();
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+	/*=============================================
 	SUMAR EL TOTAL de votantes
 	=============================================*/
 
@@ -319,7 +341,7 @@ class ModeloPuntero{
 
 	}
 
-			/*=============================================
+	/*=============================================
 	personas que todavia no votaron
 	=============================================*/
 
@@ -340,7 +362,7 @@ class ModeloPuntero{
 
 	}
 
-			/*=============================================
+	/*=============================================
 	Nombre de votantes
 	=============================================*/
 
@@ -361,7 +383,7 @@ class ModeloPuntero{
 
 	}
 
-			/*=============================================
+	/*=============================================
 	SUMAR EL TOTAL posible votantes
 	=============================================*/
 
@@ -381,7 +403,7 @@ class ModeloPuntero{
 
 	}
 
-			/*=============================================
+	/*=============================================
 	cantidad que ya votaron por puntero
 	=============================================*/
 
@@ -403,6 +425,10 @@ class ModeloPuntero{
 		$stmt = null;
 
 	}
+
+	/*=============================================
+	cantidad de votantes
+	=============================================*/
 
 	static public function mdlCantidadVotante($tabla,$id){	
 

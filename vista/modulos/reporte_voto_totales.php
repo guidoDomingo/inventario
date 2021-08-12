@@ -45,7 +45,7 @@ PRODUCTOS MÁS VENDIDOS
 
 		    <div class="col-md-5">
 		      	
-		        <ul class="">
+		        <ul class="votosTotales">
       
                <?php
 
@@ -63,16 +63,18 @@ PRODUCTOS MÁS VENDIDOS
 
 
                       <li>
-                     
-                         <p>Total de votos: <span class="pull-right text-'.$colores[$key].'">'.$votosTotales["total"].'</span>
-                         </p>
+                          
+                        
+                           <p><strong>Total de votos:<strong><span class="pull-right text-white voto" p-5>'.$votosTotales["total"].'</span>
+                           </p>
+                        
                          
 
                       </li> 
 
                       <li>
                      
-                         <p>Todavía no votaron: <span class="pull-right text-'.$colores[$key].'">'.$faltaVotar["total"].'</span>
+                         <p><strong>Todavía no votaron:<strong><span class="pull-right text-white voto" p-5>'.$faltaVotar["total"].'</span>
                          </p>
                          
 
@@ -154,7 +156,7 @@ PRODUCTOS MÁS VENDIDOS
 
 
 
-          for($i = 0; $i < 2; $i++){
+          for($i = 0; $i < 1; $i++){
 
               $votos = ControladorPuntero::ctrVotanteTotal();
              
