@@ -12,7 +12,7 @@ class ControladorLider{
 		if(isset($_POST["nuevoNombre"])){
 
 			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoNombre"]) &&
-			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoApellido"]) &&
+			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoApellido"]) &&
 			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["nuevoCedula"])){
 
 			   	
@@ -110,7 +110,7 @@ class ControladorLider{
 		if(isset($_POST["editarNombre"])){
 
 			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarNombre"]) &&
-			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["editarApellido"]) &&
+			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarApellido"]) &&
 			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["editarCedula"])){
 
 			   	

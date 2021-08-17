@@ -48,6 +48,14 @@
               </p>
             </a>
           </li>
+            <li class="nav-item">
+            <a href="voto-sin-puntero" class="nav-link">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+                Votantes sin puntero
+              </p>
+            </a>
+          </li>
            <li class="nav-item">
             <a href="reportes" class="nav-link">
              <i class="nav-icon fa fa-flag"></i>

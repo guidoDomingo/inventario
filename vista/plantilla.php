@@ -99,6 +99,7 @@
          $_GET["ruta"] == "usuarios" ||
          $_GET["ruta"] == "puntero" ||
          $_GET["ruta"] == "lider" ||
+         $_GET["ruta"] == "voto-sin-puntero" ||
          $_GET["ruta"] == "cajas-superiores" ||
          $_GET["ruta"] == "reportes" ||
          $_GET["ruta"] == "salir"){
@@ -141,6 +142,7 @@
 <script src="vista/js/planta.js"></script>-->
 <script src="vista/js/lider.js"></script> 
 <script src="vista/js/puntero.js"></script>
+<script src="vista/js/votante.js"></script>
 </body>
 </body>
 </html>

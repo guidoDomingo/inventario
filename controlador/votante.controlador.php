@@ -1,12 +1,12 @@
 <?php
 
-class ControladorPuntero{
+class ControladorVotante{
 
 	/*=============================================
-	crear puntero
+	crear votante
 	=============================================*/
 
-	static public function ctrCrearPuntero(){
+	static public function ctrCrearVotante(){
 
 		if(isset($_POST["nuevoNombre"])){
 
@@ -24,14 +24,13 @@ class ControladorPuntero{
 					           "ciudad" => $_POST["nuevoCiudad"],
 					           "barrio" => $_POST["nuevoBarrio"],
 					           "cedula" => intval($_POST["nuevoCedula"]),
-					           "id_lider" => intval($_POST["nuevoLider"]),
 					           "lugar_votacion" => $_POST["nuevoLugar"],
 					           "numero_orden" => $_POST["nuevoOrden"],
 					           "numero_mesa" => $_POST["nuevoNumeroMesa"],
 					           "telefono"=> $_POST["nuevoTelefono"]);
 
 
-				$respuesta = ModeloPuntero::mdlIngresarPuntero($tabla, $datos);
+				$respuesta = ModeloVotante::mdlIngresarVotante($tabla, $datos);
 
 			
 				if($respuesta == "ok"){
@@ -39,7 +38,7 @@ class ControladorPuntero{
 					echo '<script>
 
 					 swal({
-						  title: "Puntero registrado",
+						  title: "Votante registrado",
 						  text: "Registro exitoso",
 						  icon: "success",
 						  buttons: true,
@@ -47,9 +46,9 @@ class ControladorPuntero{
 						})
 						.then((willDelete) => {
 						  if (willDelete) {
-						    window.location = "puntero";
+						    window.location = "voto-sin-puntero";
 						  } else {
-						    window.location = "puntero";
+						    window.location = "voto-sin-puntero";
 						  }
 						});
 				
@@ -70,9 +69,9 @@ class ControladorPuntero{
 						})
 						.then((willDelete) => {
 						  if (willDelete) {
-						    window.location = "puntero";
+						    window.location = "voto-sin-puntero";
 						  } else {
-						    window.location = "puntero";
+						    window.location = "voto-sin-puntero";
 						  }
 						});
 				
@@ -91,89 +90,24 @@ class ControladorPuntero{
     }	
 
 	/*=============================================
-	MOSTRAR PUNTERO
+	MOSTRAR Votante
 	=============================================*/
 
-	static public function ctrMostrarPuntero($item, $valor){
+	static public function ctrMostrarVotante($item, $valor, $ambiguo = "no"){
 
-		$tabla = "puntero";
+		$tabla = "voto_sin_puntero";
 
-		$respuesta = ModeloPuntero::mdlMostrarPunteros($tabla, $item, $valor);
-
-		return $respuesta;
-	}
-
-	/*=============================================
-	MOSTRAR PUNTERO LIDERES
-	=============================================*/
-
-	static public function ctrMostrarPunterosLideres($item, $valor){
-
-		$tabla = "puntero";
-
-		$respuesta = ModeloPuntero::MdlMostrarPunterosLideres($tabla, $item, $valor);
-
-		return $respuesta;
-	}
-
-	/*=============================================
-	MOSTRAR PUNTERO UNICO
-	=============================================*/
-
-	static public function ctrMostrarPunterosUnicos($item, $valor){
-
-		$tabla = "puntero";
-
-		$respuesta = ModeloPuntero::mdlMostrarPunterosUnicos($tabla, $item, $valor);
-
-		return $respuesta;
-	}
-
-	/*=============================================
-	MOSTRAR Votante total
-	=============================================*/
-
-	static public function ctrVotanteTotal(){
-
-		$tabla = "puntero";
-
-		$respuesta = ModeloPuntero::mdlSumaTotalVotante($tabla);
-
-		return $respuesta;
-	}
-
-	/*=============================================
-	MOSTRAR Posible Votante total
-	=============================================*/
-
-	static public function ctrPosibleVotanteTotal(){
-
-		$tabla = "puntero";
-
-		$respuesta = ModeloPuntero::mdlSumaTotalPosibleVotante($tabla);
-
-		return $respuesta;
-	}
-
-	/*=============================================
-	MOSTRAR nombre de los votantes
-	=============================================*/
-
-	static public function ctrVotanteNombres(){
-
-		$tabla = "puntero";
-
-		$respuesta = ModeloPuntero::mdlVotanteNombre($tabla);
+		$respuesta = ModeloVotante::mdlMostrarVotantes($tabla, $item, $valor, $ambiguo);
 
 		return $respuesta;
 	}
 
 
 	/*=============================================
-	EDITAR puntero
+	EDITAR VOTANTE
 	=============================================*/
 
-	static public function ctrEditarPuntero(){
+	static public function ctrEditarVotante(){
 
 		if(isset($_POST["editarNombre"])){
 
@@ -191,7 +125,6 @@ class ControladorPuntero{
 					           "ciudad" => $_POST["editarCiudad"],
 					           "barrio" => $_POST["editarBarrio"],
 					           "cedula" => intval($_POST["editarCedula"]),
-					           "id_lider" => intval($_POST["editarLider"]),
 					           "id_persona" => intval($_POST["idPersona"]),
 					           "lugar_votacion" => $_POST["editarLugar"],
 					           "numero_orden" => $_POST["editarOrden"],
@@ -200,7 +133,7 @@ class ControladorPuntero{
 
 				//var_dump($datos);
 			
-				$respuesta = ModeloPuntero::mdlEditarPuntero($tabla, $datos);
+				$respuesta = ModeloVotante::mdlEditarVotante($tabla, $datos);
 
 			
 				if($respuesta == "ok"){
@@ -216,9 +149,9 @@ class ControladorPuntero{
 						})
 						.then((willDelete) => {
 						  if (willDelete) {
-						    window.location = "puntero";
+						    window.location = "voto_sin_puntero";
 						  } else {
-						    window.location = "puntero";
+						    window.location = "voto_sin_puntero";
 						  }
 						});
 				
@@ -232,7 +165,7 @@ class ControladorPuntero{
 
 					 swal({
 						  title: "Registro incorrecto",
-						  text: "Error al registrar el puntero",
+						  text: "Error al registrar el votante",
 						  icon: "warning",
 						  buttons: true,
 						  dangerMode: true,
@@ -258,18 +191,18 @@ class ControladorPuntero{
     }
 
 	/*=============================================
-	BORRAR PUNTERO
+	BORRAR VOTANTE
 	=============================================*/
 
-	static public function ctrBorrarPuntero(){
+	static public function ctrBorrarVotante(){
 
-		if(isset($_GET["idPuntero"])){
+		if(isset($_GET["idVotante"])){
 
-			$tabla ="puntero";
-			$idPuntero = $_GET["idPuntero"];
+			$tabla ="voto_sin_puntero";
+			$idPuntero = $_GET["idVotante"];
 
 
-			$respuesta = ModeloPuntero::mdlBorrarPuntero($tabla, $idPuntero);
+			$respuesta = ModeloVotante::mdlBorrarVotante($tabla, $idPuntero);
 
 			if($respuesta == "ok"){
 
@@ -284,9 +217,9 @@ class ControladorPuntero{
 						})
 						.then((willDelete) => {
 						  if (willDelete) {
-						    window.location = "puntero";
+						    window.location = "voto-sin-puntero";
 						  } else {
-						    window.location = "puntero";
+						    window.location = "voto-sin-puntero";
 						  }
 						});
 
@@ -295,48 +228,6 @@ class ControladorPuntero{
 			}		
 
 		}
-
-	}
-
-	/*=============================================
-	 SUNA PUNTERO
-	=============================================*/
-
-	static public function ctrMostrarSumaPuntero(){
-
-		$tabla = "puntero";
-
-		$respuesta = ModeloPuntero::mdlSumaTotalPuntero($tabla);
-
-		return $respuesta;
-
-	}
-
-		/*=============================================
-	 SUNA LIDER
-	=============================================*/
-
-	static public function ctrCantidadTotalLider(){
-
-		$tabla = "lider";
-
-		$respuesta = ModeloPuntero::mdlCantidadTotalLider($tabla);
-
-		return $respuesta;
-
-	}
-
-	/*=============================================
-	Mostrar cantidad de votantes
-	=============================================*/
-
-	static public function ctrMostrarCantidadVotante($id){
-
-		$tabla = "puntero";
-
-		$respuesta = ModeloPuntero::mdlCantidadVotante($tabla,$id);
-
-		return $respuesta;
 
 	}
 
